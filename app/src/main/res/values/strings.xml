@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Aplikasi Catatan UAS</string>
+    <string name="task_default_text">Task</string>
+    <string name="delete_button_text">Delete</string>
+</resources>
+
+
+

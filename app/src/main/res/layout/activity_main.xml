@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    tools:context=".MainActivity">
+
+    <!-- Judul Aplikasi -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="To-Do List"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- Subjudul -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stay organized and productive"
+        android:textColor="@android:color/darker_gray"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Input dan Tombol Add -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/task_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Add a new task..."
+            android:inputType="text"
+            android:padding="12dp"
+            android:background="@drawable/edittext_background"/>
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:layout_marginStart="8dp"
+            android:background="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- Tombol Filter -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <Button
+            android:id="@+id/filter_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="All"
+            android:background="?attr/selectableItemBackground"
+            android:textColor="@android:color/black"/>
+
+        <Button
+            android:id="@+id/filter_active"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Active"
+            android:background="?attr/selectableItemBackground"
+            android:textColor="@android:color/black"/>
+
+        <Button
+            android:id="@+id/filter_completed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Completed"
+            android:background="?attr/selectableItemBackground"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+    <!-- Daftar Task -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:id="@+id/task_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/empty_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No tasks added yet\nAdd your first task above!"
+                android:gravity="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp"
+                android:padding="32dp"
+                android:visibility="visible"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Counter Task -->
+    <TextView
+        android:id="@+id/tasks_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0 active tasks"
+        android:textColor="@android:color/darker_gray"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>
